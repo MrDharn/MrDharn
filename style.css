@@ -1,0 +1,323 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  body{
+    
+    background: #F1F1F1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    position: relative;
+    /* align-items: center; */
+  }
+
+  /*  
+  ======================================
+  Header Navbar 
+  ===================================
+  */
+
+  header{
+    background:#1A1A1A;
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+  }
+
+  /* 
+  =======================================
+  Input container
+  =====================================
+  */
+
+  
+  .search-box{
+    display: flex;
+    align-items: center;
+    width: 480px;
+  }
+
+
+  input{
+    display: flex;
+    height: 32px;
+    padding: 8px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 8px;
+    border: 1px solid #616161; 
+    outline: none;
+    height: 32px;
+    flex-grow: 1;
+    background: #303030;
+    order: 1;
+    color: var(--grey-g-100, #B5B5B5);
+  }
+
+  input::placeholder{
+    color: var(--grey-g-100, #B5B5B5);
+
+/* Text-13/medium */
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */
+  }
+
+  input:hover, input:active{
+    border: 1px solid var(--stroke-s-100, #E1E1E1);
+    background: var(--grey-g-200, #303030);
+
+  }
+  input:active, input:focus{
+    border: 2px solid var(--White, #FFF);
+  }
+
+  .search-icon{
+    width: 20px;
+    height: 20px; 
+    flex-shrink: 0;
+
+  }
+
+
+   /* 
+  =======================================
+  user-icon container
+  =====================================
+  */
+
+  .user-icon-box{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 2px 2px 2px 8px;
+  }
+
+.icon{
+  cursor: pointer;
+  border-radius: 8px;
+  background: var(--grey-grey-200, #303030);
+}
+
+.icon:hover, .menu-toggle:hover{
+  background: #616161;
+}
+.icon:focus, .menu-toggle:focus{
+    background: var(--grey-grey-50, #656266);
+    box-shadow: 0px 0px 0px 3px #005BD3, 0px 0px 0px 1px #000;
+}
+.icon:active, .menu-toggle:active{
+  background: #656266;
+}
+
+
+.menu-toggle{
+  display: flex;
+  align-items: center;
+  height: 32px;
+  color: var(--font-light, #E3E3E3);
+  background: var(--grey-grey-200, #303030);
+/* Text-12/medium */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 15.6px */
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 2px 2px 2px 8px;
+  cursor: pointer;
+}
+
+.menu-toggle span{
+  display: flex;
+height: 28px;
+padding: 9px 5px 10px 5px;
+justify-content: center;
+align-items: center;
+border-radius: 6px;
+background: #36FBA1;
+color: rgba(0, 0, 0, 0.40);
+font-weight: 500;
+font-size: 12px;
+}
+
+ /* 
+  =======================================
+Media query for Header elements
+  =====================================
+  */
+@media screen and (max-width:799.9px) {
+  
+main{
+  display: flex;
+  padding: 12px 8px 12px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  border: 2px soild red;
+
+}
+}
+@media screen and (min-width:800px) {
+  main{
+    width: 800px;
+    margin: 0 auto;
+  }
+   
+}
+
+
+
+
+
+
+
+
+/* 
+  =======================================
+  Menu Items container
+  =====================================
+
+
+  */
+
+  a{
+    text-decoration: none;
+  }
+
+  li{
+    list-style: none;
+  }
+
+  .dropdown-menu{
+    position: absolute;
+    right: 12px;
+    top: 65px;
+    display: none;
+    translate: scale(0);
+    width: 320px;
+    padding: 6px 6px;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 4px;
+    border-radius: 14px;
+    border: 1px solid var(--stroke-s-50, #DBDBDB);
+    background: var(--White, #FFF);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s linear;
+  }
+  .dropdown-menu.visible{
+    display: flex;
+    translate: scale(1);
+    transition: all 0.5s linear;
+  }
+  .menu-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 12px 4px 8px;
+    border-radius: 8px;
+    background: var(--states-hover, #F1F1F1);
+  }
+
+  .dropdown-item{
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    color: rgba(48, 48, 48, 1);
+  }
+  .dropdown-item:hover{
+    background: var(--states-hover, #F1F1F1);
+  }
+
+  .dropdown-item:focus{
+    border: 2px solid var(--states-focused, #005BD3);
+  }
+
+  .dropdown-item:active{
+   background: var(--states-pressed, #F0F0F0);
+  }
+
+  svg{
+    cursor: pointer;
+  }
+   /* 
+  =======================================
+  Main Contents
+  =====================================
+  */
+
+
+.subscription-plan{
+  display: flex;
+padding: 12px 8px 12px 16px;
+justify-content: space-between;
+align-items: center;
+border-radius: 8px;
+background: var(--grey-grey-300, #1A1A1A);
+}
+
+.subscription-plan p{
+  color: var(--font-light, #E3E3E3);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 18.2px */
+}
+
+.btn-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn{
+  display: flex;
+  padding: 6px 12px;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: var(--White, #FFF);
+  box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+  cursor: pointer;
+}
+
+.btn:hover{
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #F7F7F7;
+  box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+}
+
+.btn:active{
+  border-radius: 6px;
+background: #F7F7F7;
+box-shadow: 0px 2px 1.5px 0px #E2E2E2 inset;
+}
+.btn:focus{
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: var(--White, #FFF);
+  box-shadow: 0px 0px 0px 3px #005BD3, 0px 0px 0px 1px #FFF, 0px -1px 0px 0px #B5B5B5 inset;
+}
+
+
