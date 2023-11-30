@@ -425,3 +425,8 @@ box-shadow: 0px 0px 0px 5px #005BD3, 0px 0px 0px 3px #FFF, 0px 0px 0px 1.5px #33
   width: inherit;
   height: inherit;
 }
+
+.dropdown-card svg{
+  width: 24px;
+  height: 24px;
+}
