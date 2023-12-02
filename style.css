@@ -352,12 +352,18 @@ border-radius: 18px;
 
 .dropdown-card{
   display: flex;
-padding: 8px 8px 12px 8px;
+  padding: 8px 8px 12px 8px;
 /* align-items: center; */
-gap: 15px;
-align-self: stretch;
-border-radius: 10px;
-background: #F3F3F3;
+  gap: 15px;
+/* align-self: stretch; */
+  border-radius: 10px;
+  background: #F3F3F3;
+}
+.dropdown-card .not-completed:hover circle {
+  stroke-dasharray: 0 0;
+}
+.dropdown-card .not-completed:hover circle{
+   stroke-dasharray: 0 0;
 }
 
 p.text{
@@ -429,4 +435,35 @@ box-shadow: 0px 0px 0px 5px #005BD3, 0px 0px 0px 3px #FFF, 0px 0px 0px 1.5px #33
 .dropdown-card svg{
   width: 24px;
   height: 24px;
+}
+
+.svg-btn{
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  height: 25px;
+}
+
+/* hide certain svg  */
+
+.not-visible{
+  display: none;
+}
+
+@keyframes rotation{
+  from{
+    transform: rotate(0deg);
+
+  } to{
+    transform: rotate(360deg)
+  }
+}
+
+.loading{
+
+  animation-name: rotation;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  
 }

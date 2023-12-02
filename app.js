@@ -14,9 +14,9 @@ function app(){
 
     const menulist = menuListCont.querySelectorAll('li a.dropdown-item')
 
-    console.log(menulist)
 // function to insert the focus on the fist list item
-function addFocusOnListItem1(){
+
+    function addFocusOnListItem1(){
     if(menuListCont.classList.contains('visible')){
        
         console.log( menulist[0])
@@ -33,6 +33,77 @@ function addFocusOnListItem1(){
 
 
     toggleBtn.addEventListener('click', displayNav)
+
+
+    //getting the dropdown elements button
+
+    const dropDownBtn = document.querySelector('.svg-btn');
+
+
+    //dropDownBtn invoked function
+
+    let hidden = 'not-visible'
+    let loading = "btn-marked"
+    
+    // 
+    
+    dropDownBtn.addEventListener("click", function(){
+        
+        const brokenLineIcon = dropDownBtn.querySelector(".not-completed");
+
+        const loadingIcon = dropDownBtn.querySelector('.loading');
+
+        const completedIcon = dropDownBtn.querySelector('.completed');
+
+        dropDownBtn.classList.toggle(loading)
+        if(dropDownBtn.classList.contains(loading)){
+
+            loadMarkedButton()
+          
+        } else{
+           unloadMArkedButton()
+        }
+
+// To load that button is being marked
+
+        function loadMarkedButton(){
+
+            brokenLineIcon.classList.add(hidden)
+
+            loadingIcon.classList.remove(hidden);
+
+            setTimeout(
+
+             function(){
+    
+                completedIcon.classList.remove(hidden)
+
+                loadingIcon.classList.add(hidden)
+
+             }, 3000)
+        }
+
+//function to unload the already marked button
+
+        function unloadMArkedButton(){
+
+            loadingIcon.classList.remove(hidden)
+
+            completedIcon.classList.add(hidden)
+
+            setTimeout(
+                function(){
+
+                    brokenLineIcon.classList.remove(hidden);
+
+                    loadingIcon.classList.add(hidden)
+
+                }, 3000)
+        }
+
+
+    })
+    
 
 }
 app()
